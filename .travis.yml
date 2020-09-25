@@ -1,22 +1,26 @@
-sudo: false
-os:
-- linux
-- osx
-- windows
-language: d
-d:
-- ldc
-- dmd
+jobs:
+  include:
+  - os: linux
+    language: d
+    d: dmd
+  - os: linux
+    language: d
+    d: ldc
+  - os: osx
+    language: d
+    d: dmd
+  - os: osx
+    language: d
+    d: ldc
+  - os: windows
+    env DC=dmd
 before_install:
 - |-
     case $TRAVIS_OS_NAME in
       windows)
       choco install dmd
-      choco install ldc
         ;;
     esac
-
-
 script:
 - make test DCOMPILER=$DC
 - echo "Done"
