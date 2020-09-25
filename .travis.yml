@@ -13,7 +13,7 @@ matrix:
     language: d
     d: ldc
   - os: windows
-    env DC=dmd
+    env: DC=dmd
 before_install:
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       choco install dmd
