@@ -2,10 +2,21 @@ sudo: false
 os:
 - linux
 - osx
+- windows
 language: d
 d:
 - ldc
 - dmd
+before_install:
+- |-
+    case $TRAVIS_OS_NAME in
+      windows)
+      choco install dmd
+      choco install ldc
+        ;;
+    esac
+
+
 script:
 - make test DCOMPILER=$DC
 - echo "Done"
