@@ -14,12 +14,13 @@ matrix:
     d: ldc
   - os: windows
     language: shell
-    env: DC=C:\tools\ldc2.exe
+    env: DC=C:\\tools\\ldc2.exe
 before_install:
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       choco install ldc;
       choco install make;
   fi
 script:
+- dir C:\\tools
 - make test DCOMPILER=$DC
 - echo "Done"
