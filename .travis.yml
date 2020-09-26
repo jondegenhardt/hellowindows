@@ -14,10 +14,10 @@ matrix:
     d: ldc
   - os: windows
     language: shell
-    env: DC=dmd
+    env: DC=ldc2.ext
 before_install:
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-      choco install dmd;
+      choco install ldc;
       choco install make;
   fi
 script:
