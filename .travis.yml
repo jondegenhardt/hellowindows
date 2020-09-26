@@ -19,10 +19,10 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
       choco install ldc;
       choco install make;
+      dir C:\\tools;
+      rename C:\\tools\\ldc2-*-windows-x64 ldc2;
+      dir C:\\tools;
   fi
 script:
-- dir C:\\tools
-- ren C:\\tools\\ldc2-*-windows-x64 C:\\tools\\ldc2
-- dir C:\\tools
 - make test DCOMPILER=$DC
 - echo "Done"
