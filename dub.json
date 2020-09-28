@@ -1,0 +1,10 @@
+{
+    "name": "hellowindows",
+    "authors": ["Jon Degenhardt"],
+    "copyright": "Copyright © 2020, Jon Degenhardt",
+    "description": "A minimal D application that runs on Unix, MacOs and Windows",
+    "license": "BSL-1.0",
+    "targetType": "executable",
+    "targetName": "helloworld",
+    "targetPath": "bin"
+}
