@@ -27,5 +27,5 @@ jobs:
 
       - name: Build and Run
         run: |
-          dub build --compiler=$DC
-          dub run --compiler=$DC
+          dub build
+          dub run
