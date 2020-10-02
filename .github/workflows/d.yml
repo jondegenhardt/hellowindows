@@ -30,4 +30,4 @@ jobs:
           dub build
           dub run
           dub clean
-          make test
+          make test DCOMPILER=$DC
