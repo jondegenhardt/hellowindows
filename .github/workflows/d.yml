@@ -29,3 +29,5 @@ jobs:
         run: |
           dub build
           dub run
+          dub clean
+          make test
