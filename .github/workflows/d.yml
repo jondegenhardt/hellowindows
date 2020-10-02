@@ -28,9 +28,9 @@ jobs:
       - name: Build and Run
         shell: bash
         run: |
-          echo "DC: '${DC}'"
           dub build
           dub run
           dub clean
+          make clean
           make test DCOMPILER=${DC}
           
