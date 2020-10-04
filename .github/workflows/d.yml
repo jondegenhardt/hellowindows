@@ -42,19 +42,19 @@ jobs:
       - name: Make Debug Build and Run
         shell: bash
         run: |
-          make debug-test DCOMPILER=${DC}
+          make test-debug DCOMPILER=${DC}
 
       - name: Make Release Build and Run
         shell: bash
         run: |
-          make release-test DCOMPILER=${DC}
+          make test-release DCOMPILER=${DC}
 
       - name: Make Debug Build and Run 64-bit
         shell: bash
         run: |
-          make debug-test DCOMPILER=${DC} DFLAGS=-m64
+          make test-debug DCOMPILER=${DC} DFLAGS=-m64
 
       - name: Make Release Build and Run 64-bit
         shell: bash
         run: |
-          make release-test DCOMPILER=${DC} DFLAGS=-m64
+          make test-release DCOMPILER=${DC} DFLAGS=-m64
