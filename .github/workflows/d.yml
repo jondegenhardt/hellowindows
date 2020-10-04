@@ -25,12 +25,21 @@ jobs:
         with:
           compiler: ${{ matrix.dc }}
 
-      - name: Build and Run
+      - name: Dub Build and Run
         shell: bash
         run: |
           dub build
           dub run
           dub clean
           make clean
+
+      - name: Make Build and Run
+        shell: bash
+        run: |
           make test DCOMPILER=${DC}
-          
+          make clean
+
+      - name: Make Build and Run 64-bit
+        shell: bash
+        run: |
+          make test DCOMPILER=${DC} DFLAGS=-m64
