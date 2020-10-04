@@ -9,15 +9,23 @@ appname = helloworld
 appsrc = $(srcdir)/$(appname).d
 app = $(bindir)/$(appname)
 
-release: $(app)
-$(app): $(appsrc)
+release: clean app-release
+app-release:
 	$(DCOMPILER) -release -O -od$(objdir) -of$(app) $(appsrc)
 
-clean:
-	-rm $(objdir)/*.o
-	-rm $(bindir)/*
+debug: clean app-debug
+app-debug:
+	$(DCOMPILER) -debug -od$(objdir) -of$(app) $(appsrc)
 
-test: release test-nobuild
+clean:
+	-rm -f $(objdir)/*.o
+	-rm -f $(bindir)/*
+
+test: test-release
+
+test-release: release test-nobuild
+
+test-debug: debug test-nobuild
 
 test-nobuild:
 	$(app)
