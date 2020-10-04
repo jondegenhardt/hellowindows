@@ -28,7 +28,7 @@ jobs:
       - name: Dub Build and Run
         shell: bash
         run: |
-          dub build
+          dub build -v --force
           dub run
           dub clean
           make clean
