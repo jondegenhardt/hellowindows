@@ -1,5 +1,6 @@
 ## Identify the compiler as dmd, ldc, or gdc
 
+DFLAGS =
 compiler_type =
 
 ifndef DCOMPILER
@@ -31,7 +32,7 @@ endif
 
 debug_flag =
 ifeq ($(compiler_type),dmd)
-	debug_flag = -debug -g
+	debug_flag = -debug
 else ifeq ($(compiler_type),ldc)
 	debug_flag = --d-debug
 else ifeq ($(compiler_type),gdc)
@@ -64,11 +65,11 @@ app = $(bindir)/$(appname)
 
 release: clean app-release
 app-release:
-	$(DCOMPILER) $(release_flag) -O -od$(objdir) -of$(app) $(appsrc)
+	$(DCOMPILER) $(release_flag) -O -od$(objdir) -of$(app) $(appsrc) $(DFLAGS)
 
 debug: clean app-debug
 app-debug:
-	$(DCOMPILER) $(debug_flag) -od$(objdir) -of$(app) $(appsrc)
+	$(DCOMPILER) $(debug_flag) -od$(objdir) -of$(app) $(appsrc) $(DFLAGS)
 
 clean:
 	-rm -f $(objdir)/*.o
