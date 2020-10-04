@@ -54,7 +54,7 @@ jobs:
         run: |
           make debug-test DCOMPILER=${DC} DFLAGS=-m64
 
-- name: Make Release Build and Run 64-bit
+      - name: Make Release Build and Run 64-bit
         shell: bash
         run: |
           make release-test DCOMPILER=${DC} DFLAGS=-m64
