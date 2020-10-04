@@ -31,7 +31,7 @@ endif
 
 debug_flag =
 ifeq ($(compiler_type),dmd)
-	debug_flag = -debug
+	debug_flag = -debug -g
 else ifeq ($(compiler_type),ldc)
 	debug_flag = --d-debug
 else ifeq ($(compiler_type),gdc)
