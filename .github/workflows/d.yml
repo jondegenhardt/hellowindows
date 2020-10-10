@@ -25,6 +25,12 @@ jobs:
         with:
           compiler: ${{ matrix.dc }}
 
+      - name: Environment check
+        shell: bash
+        run: |
+          uname -s
+          echo "PATH: ${PATH}"
+
       - name: Dub Debug Build and Run
         shell: bash
         run: |

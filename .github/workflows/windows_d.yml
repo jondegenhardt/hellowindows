@@ -28,14 +28,14 @@ jobs:
       - name: Environment Check
         shell: bash
         run: |
+          uname -s
           type -p dub
-          type -p ${DC}
-          type -p make
-          type -p dos2unix
-          type -p unix2dos
           dub --version
+          type -p ${DC}
           ${DC} --version
+          type -p make
           make --version
+          type -p dos2unix
           dos2unix --version
+          type -p unix2dos
           unix2dos --version
-          ls -1 C:\\msys64\\*
