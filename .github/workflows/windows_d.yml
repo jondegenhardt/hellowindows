@@ -38,4 +38,4 @@ jobs:
           make --version
           dos2unix --version
           unix2dos --version
-          ls -1 C:\msys64\*
+          ls -1 C:\\msys64\\*
