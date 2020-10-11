@@ -8,6 +8,8 @@ void main(string[] args)
     version(Windows) writeln("  Windows");
     version(Win32) writeln("  Win32");
     version(Win64) writeln("  Win64");
+    version(Cygwin) writeln("  Cygwin");
+    version(MinGW) writeln("  MinGW");
     version(Posix) writeln("  Posix");
     version(linix) writeln("  Linux");
     version(OSX) writeln("  OSX");
@@ -23,6 +25,9 @@ void main(string[] args)
     version(CppRuntime_Gcc) writeln("  CppRuntime_Gcc");
     version(CppRuntime_Microsoft) writeln("  CppRuntime_Microsoft");
     version(CppRuntime_Sun) writeln("  CppRuntime_Sun");
+    version(X86) writeln("  X86");
+    version(X86_64) writeln("  X86_64");
+    version(AArch64) writeln("  AArch64");
     writeln("------");
     writeln();
 
