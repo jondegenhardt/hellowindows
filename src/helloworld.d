@@ -103,18 +103,18 @@ void main(string[] args)
         char[512] buf;
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.6);
-        writeln("snfprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.6) => ", buf.ptr.fromStringz);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.6) => ", buf.ptr.fromStringz);
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 1, 0.6);
-        writeln("snfprintf(<buf>, <buf.length>, \"%.*f\", 1, 0.6) => ", buf.ptr.fromStringz);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 1, 0.6) => ", buf.ptr.fromStringz);
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.06);
-        writeln("snfprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.06) => ", buf.ptr.fromStringz);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.06) => ", buf.ptr.fromStringz);
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 1, 0.06);
-        writeln("snfprintf(<buf>, <buf.length>, \"%.*f\", 1, 0.06) => ", buf.ptr.fromStringz);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 1, 0.06) => ", buf.ptr.fromStringz);
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 2, 0.06);
-        writeln("snfprintf(<buf>, <buf.length>, \"%.*f\", 2, 0.06) => ", buf.ptr.fromStringz);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 2, 0.06) => ", buf.ptr.fromStringz);
     }
 }
