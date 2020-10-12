@@ -25,7 +25,7 @@ jobs:
         with:
           compiler: ${{ matrix.dc }}
 
-      - name: Environment Check
+      - name: Bash Environment Check
         shell: bash
         run: |
           uname -s
@@ -39,3 +39,19 @@ jobs:
           dos2unix --version
           type -p unix2dos
           unix2dos --version
+
+      - name: CMD Environment Check
+        shell: cmd
+        run: |
+          uname -s
+          type -p dub
+          dub --version
+          type -p ${DC}
+          ${DC} --version
+          type -p make
+          make --version
+          type -p dos2unix
+          dos2unix --version
+          type -p unix2dos
+          unix2dos --version
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"

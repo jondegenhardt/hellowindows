@@ -64,3 +64,10 @@ jobs:
         shell: bash
         run: |
           make test-release DCOMPILER=${DC} DFLAGS=-m64
+
+      - name: Windows CMD Make Release Build and Run 64-bit
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          - make test-release DCOMPILER=${DC} DFLAGS=-m64
