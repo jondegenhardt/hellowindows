@@ -95,6 +95,23 @@ void main(string[] args)
     writeln("format(\"%.*f\", 5, -999999.999996) => ", format("%.*f", 5, -999999.999996));
     writeln("format(\"%.*f\", 6, -999999.999996) => ", format("%.*f", 6, -999999.999996));
 
+
+    writeln("---------------");
+
+    writeln("format(\"%.*f\", 0, 0.1) => ", format("%.*f", 0, 0.1));
+    writeln("format(\"%.*f\", 0, 0.4) => ", format("%.*f", 0, 0.4));
+    writeln("format(\"%.*f\", 0, 0.5) => ", format("%.*f", 0, 0.5));
+    writeln("format(\"%.*f\", 0, 0.50001) => ", format("%.*f", 0, 0.50001));
+    writeln("format(\"%.*f\", 0, 0.6) => ", format("%.*f", 0, 0.6));
+    writeln("format(\"%.*f\", 0, 0.60001) => ", format("%.*f", 0, 0.60001));
+    writeln("format(\"%.*f\", 0, 0.7) => ", format("%.*f", 0, 0.7));
+    writeln("format(\"%.*f\", 0, 0.8) => ", format("%.*f", 0, 0.8));
+    writeln("format(\"%.*f\", 0, 0.9) => ", format("%.*f", 0, 0.9));
+    writeln("format(\"%.*f\", 0, 0.99999) => ", format("%.*f", 0, 0.99999));
+    writeln("format(\"%.*f\", 0, 1.0) => ", format("%.*f", 0, 1.0));
+
+    writeln("---------------");
+
     {
         /* Direct calls to snprintf (called by format). */
 
@@ -116,5 +133,43 @@ void main(string[] args)
 
         snprintf(buf.ptr, buf.length, "%.*f".toStringz, 2, 0.06);
         writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 2, 0.06) => ", buf.ptr.fromStringz);
+
+        writeln("---------------");
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.1);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.1) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.4);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.4) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.5);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.5) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.50001);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.50001) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.6);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.6) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.60001);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.60001) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.7);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.7) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.8);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.8) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.9);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.9) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 0.99999);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 0.99999) => ", buf.ptr.fromStringz);
+
+        snprintf(buf.ptr, buf.length, "%.*f".toStringz, 0, 1.0);
+        writeln("snprintf(<buf>, <buf.length>, \"%.*f\", 0, 1.0) => ", buf.ptr.fromStringz);
+
+        writeln("---------------");
+
     }
 }
