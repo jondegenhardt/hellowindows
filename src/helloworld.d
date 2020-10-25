@@ -111,6 +111,8 @@ void main(string[] args)
         writeln("format(\"%.*f\", 0, 1.0) => ", format("%.*f", 0, 1.0));
 
         double zeroPointSix = 0.6;
+        assert(zeroPointSix > 0.5);
+        assert(zeroPointSix < 1.0);
         writeln("format(\"%.*f\", 0, zeroPointSix) => ", format("%.*f", 0, zeroPointSix));
 
         writeln("---------------");
